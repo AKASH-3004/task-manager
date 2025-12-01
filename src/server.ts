@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/connectDB.js";
 import cors from "cors";
 import { registerUser, loginUser } from "./routes/authRoutes.js";
-import { createTask, getTasks, getTaskById, updateTask, deleteTask, getAllTasks } from "./routes/taskRoutes.js";
+import { createTask, getTaskById, updateTask, deleteTask, getAllTasks } from "./routes/taskRoutes.js";
 import { authMiddleware, isAdminMiddleware } from "./middleware/authMiddleware.js";
 
 dotenv.config({path: "./src/.env"});
@@ -13,11 +13,13 @@ const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: process.env.CLIENT_URL || 'https://task-manager-frontend-delta-orpin.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204
 };
+
+console.log(`Allowed CORS origin: ${corsOptions.origin}`);
 
 app.use(express.json());
 app.use(cors(corsOptions));
