@@ -1,10 +1,10 @@
 import express, {type Application, type Request, type Response } from "express";
 import dotenv from "dotenv";
-import connectDB from "./config/connectDB.ts";
+import connectDB from "./config/connectDB.js";
 import cors from "cors";
-import { registerUser, loginUser } from "./routes/authRoutes.ts";
-import { createTask, getTasks, getTaskById, updateTask, deleteTask, getAllTasks } from "./routes/taskRoutes.ts";
-import { authMiddleware, isAdminMiddleware } from "./middleware/authMiddleware.ts";
+import { registerUser, loginUser } from "./routes/authRoutes.js";
+import { createTask, getTasks, getTaskById, updateTask, deleteTask, getAllTasks } from "./routes/taskRoutes.js";
+import { authMiddleware, isAdminMiddleware } from "./middleware/authMiddleware.js";
 
 dotenv.config({path: "./src/.env"});
 connectDB();

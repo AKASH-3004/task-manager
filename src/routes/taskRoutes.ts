@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import Task from "../models/Task.ts";
+import Task from "../models/Task.js";
 import mongoose from "mongoose";
 import type { SortOrder } from "mongoose";
 

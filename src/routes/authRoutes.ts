@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express";
 import jwt from "jsonwebtoken";
-import User from "../models/User.ts";
+import User from "../models/User.js";
 
 // Helper function to generate JWT token
 function generateToken(userId: string, role: string): string {
